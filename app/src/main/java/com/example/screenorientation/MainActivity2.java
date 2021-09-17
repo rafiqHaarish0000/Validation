@@ -12,32 +12,34 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity2 extends AppCompatActivity {
-    Button alertDialog;
-    EditText name;
+    Button alertDialogButton;
+    String name;
     private View view1;
-    private String userName;
     private Boolean alert = false;
+    private AlertDialog.Builder dialpg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        alertDialog = (Button) findViewById(R.id.alert);
+        alertDialogButton = (Button) findViewById(R.id.alert);
 
-        View inflater = getLayoutInflater().inflate(R.layout.bottom_btn, null);
-        name = inflater.findViewById(R.id.show);
+        view1 = LayoutInflater.from(this).inflate(R.layout.bottom_btn,null);
+        EditText ed = view1.findViewById(R.id.show);
+        name = ed.getText().toString();
 
-        if (savedInstanceState != null && savedInstanceState.getBoolean("dial", false)) {
-            userName = savedInstanceState.getString("name");
-            name.setText(userName);
-            createAlert(view1);
+        if (savedInstanceState != null) {
+            name = savedInstanceState.getString("name");
+            ed.setText(name);
+            alertDialog();
         }
 
-        alertDialog.setOnClickListener(new View.OnClickListener() {
+
+        alertDialogButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (alert = true) {
-                    createAlert(view);
+                    alertDialog();
                 }
 
             }
@@ -47,29 +49,28 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putString("name", userName);
+        EditText ed = view1.findViewById(R.id.show);
+        String userName = ed.getText().toString();
+        outState.putString("name",userName);
         outState.putBoolean("dial", alert);
-
     }
     //onCall()
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        savedInstanceState.getString("name",userName);
+        savedInstanceState.getString("name",name);
         savedInstanceState.getBoolean("dial",alert);
-
     }
 
-    public void createAlert(View v) {
-        AlertDialog.Builder d = new AlertDialog.Builder(MainActivity2.this);
-        d.setTitle("Alert");
-        final View customLayout = getLayoutInflater().inflate(R.layout.bottom_btn, null);
-        d.setView(customLayout);
-        EditText ed = customLayout.findViewById(R.id.show);
-        toast(ed.getText().toString());
-        d.show();
+    //show alert
+    public void alertDialog(){
+        dialpg = new AlertDialog.Builder(MainActivity2.this);
+        dialpg.setTitle("Alert").setMessage("Rotate your screen").show();
+        dialpg.setView(view1);
+        dialpg.create();
+        dialpg.show();
     }
-
+    //toast message if needed..
     private void toast(String msg) {
         Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
     }
