@@ -4,9 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Rafiq/AndroidStudioProjects/ScreenOrientation/app/src/main/res/layout/activity_main.xml" value="0.21" />
-        <entry key="..\:/Users/Rafiq/AndroidStudioProjects/ScreenOrientation/app/src/main/res/layout/activity_main2.xml" value="0.19927536231884058" />
+        <entry key="..\:/Users/Rafiq/AndroidStudioProjects/ScreenOrientation/app/src/main/res/layout/activity_main2.xml" value="0.19202898550724637" />
         <entry key="..\:/Users/Rafiq/AndroidStudioProjects/ScreenOrientation/app/src/main/res/layout/activity_sample.xml" value="0.19927536231884058" />
+        <entry key="..\:/Users/Rafiq/AndroidStudioProjects/ScreenOrientation/app/src/main/res/layout/activity_set_fragments.xml" value="0.15715579710144928" />
         <entry key="..\:/Users/Rafiq/AndroidStudioProjects/ScreenOrientation/app/src/main/res/layout/bottom_btn.xml" value="0.19927536231884058" />
+        <entry key="..\:/Users/Rafiq/AndroidStudioProjects/ScreenOrientation/app/src/main/res/layout/fragment_check.xml" value="0.15715579710144928" />
+        <entry key="..\:/Users/Rafiq/AndroidStudioProjects/ScreenOrientation/app/src/main/res/layout/fragment_layout.xml" value="0.15715579710144928" />
+        <entry key="..\:/Users/Rafiq/AndroidStudioProjects/ScreenOrientation/app/src/main/res/layout/second_fragment.xml" value="0.12590579710144928" />
       </map>
     </option>
   </component>

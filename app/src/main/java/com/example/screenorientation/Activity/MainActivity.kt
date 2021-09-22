@@ -1,24 +1,13 @@
-package com.example.screenorientation
+package com.example.screenorientation.Activity
 
-import android.app.Dialog
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.util.Patterns
-import android.view.LayoutInflater
-import android.view.View
-import android.view.View.inflate
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.fragment.app.DialogFragment
-import com.google.android.material.bottomsheet.BottomSheetDialog
-import java.lang.ClassCastException
-import java.util.regex.Matcher
+import com.example.screenorientation.R
 import java.util.regex.Pattern
-import kotlin.math.log
 
 class MainActivity : AppCompatActivity() {
     lateinit var btnShowbottomSheet : Button
