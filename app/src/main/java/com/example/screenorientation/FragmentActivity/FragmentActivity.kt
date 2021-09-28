@@ -1,10 +1,11 @@
-package com.example.screenorientation.Activity
+package com.example.screenorientation.FragmentActivity
 
 import android.content.Context
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.screenorientation.FragmentClass.ClassFragments
@@ -12,32 +13,13 @@ import com.example.screenorientation.FragmentClass.SecondFragment
 import com.example.screenorientation.R
 import android.content.res.Configuration.ORIENTATION_PORTRAIT as ORIENTATION_PORTRAIT1
 
-class SetFragments : AppCompatActivity() {
-
+class FragmentActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_set_fragments)
-
-        val config = Configuration()
-
-        Log.i("Main Activity", "onCreate: config --> P/${Configuration.ORIENTATION_PORTRAIT}")
-        Log.i("Main Activity", "onCreate: config --> L/${Configuration.ORIENTATION_LANDSCAPE}")
-        Log.i("Main Activity", "onCreate: config --> ${config.orientation}")
-
-        if (config.orientation == Configuration.ORIENTATION_PORTRAIT) {
-
-            Log.i("Main Activity", "onCreate: ORIENTATION_PORTRAIT")
-            firstLayout(ClassFragments.getInstance(), this)
-        }
-        if (config.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-
-            Log.i("Main Activity", "onCreate: ORIENTATION_LANDSCAPE")
-
-            secondLayout(SecondFragment.getSecondInstance(), this)
-        }
+//        secondLayout(SecondFragment.getSecondInstance(),this)
 
     }
-
     //change configuration to check landscape and portrait
     override fun onConfigurationChanged(config: Configuration) {
         super.onConfigurationChanged(config)
@@ -53,9 +35,6 @@ class SetFragments : AppCompatActivity() {
         }
     }
 
-    private fun firsFragmentCall(fragment: Fragment) {
-
-    }
 
     //Call toast message..
     private fun toast(message: String) {

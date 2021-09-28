@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ScreenOrientation">
         <activity
-            android:name=".Activity.SetFragments"
+            android:name=".FragmentActivity.FragmentActivity"
             android:exported="true"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
           >
@@ -29,7 +29,6 @@
         <activity
             android:name=".Activity.MainActivity"
             android:exported="true">
-
         </activity>
     </application>
 

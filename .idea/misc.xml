@@ -3,14 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Rafiq/AndroidStudioProjects/ScreenOrientation/app/src/main/res/drawable/edit_background.xml" value="0.2203125" />
+        <entry key="..\:/Users/Rafiq/AndroidStudioProjects/ScreenOrientation/app/src/main/res/layout-sw600dp/activity_main2.xml" value="0.153125" />
+        <entry key="..\:/Users/Rafiq/AndroidStudioProjects/ScreenOrientation/app/src/main/res/layout-v21/first_fragment.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Rafiq/AndroidStudioProjects/ScreenOrientation/app/src/main/res/layout/activity_main.xml" value="0.21" />
         <entry key="..\:/Users/Rafiq/AndroidStudioProjects/ScreenOrientation/app/src/main/res/layout/activity_main2.xml" value="0.19202898550724637" />
         <entry key="..\:/Users/Rafiq/AndroidStudioProjects/ScreenOrientation/app/src/main/res/layout/activity_sample.xml" value="0.19927536231884058" />
         <entry key="..\:/Users/Rafiq/AndroidStudioProjects/ScreenOrientation/app/src/main/res/layout/activity_set_fragments.xml" value="0.15715579710144928" />
         <entry key="..\:/Users/Rafiq/AndroidStudioProjects/ScreenOrientation/app/src/main/res/layout/bottom_btn.xml" value="0.19927536231884058" />
+        <entry key="..\:/Users/Rafiq/AndroidStudioProjects/ScreenOrientation/app/src/main/res/layout/edit_background.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Rafiq/AndroidStudioProjects/ScreenOrientation/app/src/main/res/layout/first_fragment.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Rafiq/AndroidStudioProjects/ScreenOrientation/app/src/main/res/layout/fragment_check.xml" value="0.15715579710144928" />
-        <entry key="..\:/Users/Rafiq/AndroidStudioProjects/ScreenOrientation/app/src/main/res/layout/fragment_layout.xml" value="0.15715579710144928" />
-        <entry key="..\:/Users/Rafiq/AndroidStudioProjects/ScreenOrientation/app/src/main/res/layout/second_fragment.xml" value="0.12590579710144928" />
+        <entry key="..\:/Users/Rafiq/AndroidStudioProjects/ScreenOrientation/app/src/main/res/layout/fragment_layout.xml" value="0.33" />
+        <entry key="..\:/Users/Rafiq/AndroidStudioProjects/ScreenOrientation/app/src/main/res/layout/second_fragment.xml" value="0.18" />
       </map>
     </option>
   </component>
