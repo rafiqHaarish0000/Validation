@@ -16,8 +16,18 @@
     <string name="new_user">Signup</string>
     <string name="first_name">First name</string>
     <string name="last_name">Last name</string>
-    <string name="email_address">Email</string>
+    <string name="email_address">Email Address</string>
     <string name="create_account">Create Account</string>
     <string name="mobile_number">Mobile number</string>
     <string name="confirm_password">Confirm password</string>
+
+    <!-- TODO : for mobi design template-->
+    <string name="hey">Hey.!</string>
+    <string name="intro">You can user your fingerprint to access to the app</string>
+    <string name="rememberMe">Remember me</string>
+    <string name="create_acc">Still without account?</string>
+    <string name="create">Create one</string>
+    <string name="tuto">Tutorial</string>
+    <string name="mobi_chat">Mobi chat</string>
+    <string name="support">Support</string>
 </resources>

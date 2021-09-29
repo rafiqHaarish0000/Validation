@@ -8,7 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import com.example.screenorientation.FragmentActivity.FragmentActivity
+import androidx.fragment.app.FragmentActivity
 import com.example.screenorientation.R
 import java.util.regex.Pattern
 
@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
             val validation = arrayOf(userName,password)
             if(validationInfo(validation)){
                 val intent:Intent
-                intent = Intent(this,FragmentActivity::class.java)
+                intent = Intent(this, FragmentActivity::class.java)
                 startActivity(intent)
             }
         }

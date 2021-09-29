@@ -48,20 +48,7 @@ class ClassFragments : Fragment() {
     }
 
     private fun validation() {
-        userName = viewFragment.findViewById(R.id.email_name)
-        password = viewFragment.findViewById(R.id.password_edit)
-        login_buttonn = viewFragment.findViewById(R.id.login_button)
-        signUpButton = viewFragment.findViewById(R.id.first_Signup)
-        //onClick..
-        login_buttonn.setOnClickListener() {
-         val validation = arrayOf(userName,password)
-            if(validationInfo(validation)){
-                // implement methods below
-            }
-        }
-        signUpButton.setOnClickListener(){
-        var nav:NavigationMenuItemView
-        }
+
 
     }
 

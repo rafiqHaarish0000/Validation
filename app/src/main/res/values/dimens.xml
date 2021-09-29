@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="headerSize">17dp</dimen>
-    <dimen name="normalSize">16dp</dimen>
+    <dimen name="normalSize">13sp</dimen>
     <dimen name="textSize">35dp</dimen>
     <dimen name="normalTextsize">24dp</dimen>
     <dimen name="button_width">250dp</dimen>
