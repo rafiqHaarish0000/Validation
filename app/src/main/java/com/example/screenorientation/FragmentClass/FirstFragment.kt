@@ -56,7 +56,7 @@ class ClassFragments : Fragment() {
         login_buttonn.setOnClickListener() {
          val validation = arrayOf(userName,password)
             if(validationInfo(validation)){
-
+                // implement methods below
             }
         }
         signUpButton.setOnClickListener(){
