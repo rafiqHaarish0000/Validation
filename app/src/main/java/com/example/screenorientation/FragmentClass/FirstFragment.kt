@@ -45,12 +45,12 @@ class ClassFragments : Fragment() {
     }
 
     private fun validation() {
-        createOne = viewFragment.findViewById(R.id.createOne)
-        createOne.setOnClickListener(){
-            requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainerView2,SecondFragment.getSecondInstance())
-                .commit()
-        }
+//        createOne = viewFragment.findViewById(R.id.createOne)
+//        createOne.setOnClickListener(){
+//            requireActivity().supportFragmentManager.beginTransaction()
+//                .replace(R.id.fragmentContainerView2,SecondFragment.getSecondInstance())
+//                .commit()
+//        }
 
     }
     private fun validationInfo(validation:Array<EditText>):Boolean{

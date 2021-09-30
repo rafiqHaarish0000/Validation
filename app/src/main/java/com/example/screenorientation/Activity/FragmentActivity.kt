@@ -20,23 +20,6 @@ class FragmentActivity : AppCompatActivity() {
         firstLayout(ClassFragments.getInstance(), this)
 
     }
-
-//    //change configuration to check landscape and portrait
-//    override fun onConfigurationChanged(config: Configuration) {
-//        super.onConfigurationChanged(config)
-//
-//        if (config.orientation == ORIENTATION_PORTRAIT1) {
-//            Log.i("Main Activity", "onCreate: config --> ${config.orientation}")
-//            firstLayout(ClassFragments.getInstance(), this)
-//        }
-//
-//        if (config.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-//            Log.i("Main Activity", "onCreate: config --> ${config.orientation}")
-//            secondLayout(SecondFragment.getSecondInstance(), this)
-//        }
-//    }
-
-
     //Call toast message..
     private fun toast(message: String) {
         Toast.makeText(applicationContext, message, Toast.LENGTH_SHORT).show()

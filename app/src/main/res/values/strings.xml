@@ -41,4 +41,6 @@
     <string name="postal_code">Postal Code</string>
     <string name="business_det">Business Details</string>
     <string name="send">Send</string>
+    <string name="intro_revolution">Revolution in \nOnline\nPayment</string>
+    
 </resources>

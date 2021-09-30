@@ -39,22 +39,27 @@
     </style>
 
     <style name="Main_Text" parent="Widget.AppCompat.TextView">
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">45sp</item>
+        <item name="android:padding">20sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="fontFamily">@font/ubuntu_light</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/ubuntu_r</item>
         <item name="android:layout_margin">14sp</item>
     </style>
 
     <style name="Primary_Text" parent="Widget.AppCompat.TextView">
-        <item name="android:textSize">15sp</item>
-        <item name="fontFamily">@font/ubuntu_light</item>
+        <item name="android:textSize">19sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:textColor">@color/custom_text</item>
+        <item name="fontFamily">@font/ubuntu_r</item>
         <item name="android:layout_margin">14sp</item>
     </style>
 
     <style name="Normal_Text" parent="Widget.AppCompat.TextView">
-        <item name="android:textSize">14sp</item>
-        <item name="android:layout_margin">10dp</item>
-        <item name="fontFamily">@font/ubuntu_light</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_margin">12sp</item>
+        <item name="fontFamily">@font/ubuntu_r</item>
     </style>
 
     <style name="Main_Button" parent="Widget.MaterialComponents.Button">
@@ -83,27 +88,27 @@
     </style>
 
     <style name="Detail_Edit" parent="Widget.AppCompat.EditText">
-        <item name="android:textColor">#000000</item>
-        <item name="android:textSize">15sp</item>
-        <item name="fontFamily">@font/ubuntu_light</item>
-        <item name="android:padding">12sp</item>
-        <item name="android:drawablePadding">14sp</item>
-        <item name="android:padding" tools:ignore="DuplicateDefinition">18sp</item>
-        <item name="android:layout_margin">14dp</item>
+        <item name="android:textColor">@color/small_Text</item>
+        <item name="android:textSize">18sp</item>
+        <item name="fontFamily">@font/ubuntu_r</item>
+        <item name="android:padding">19sp</item>
+        <item name="android:drawablePadding">19sp</item>
+        <item name="android:padding" tools:ignore="DuplicateDefinition">19sp</item>
+        <item name="android:layout_margin">12sp</item>
         <item name="android:gravity">left</item>
     </style>
 
     <style name="Spinner_Text" parent="Widget.AppCompat.TextView">
         <item name="android:drawableEnd">@drawable/icon_down_arrow</item>
         <item name="android:drawableStart">@drawable/ic_baseline_brightness_1_24</item>
-        <item name="android:drawablePadding">15dp</item>
+        <item name="android:drawablePadding">18sp</item>
         <item name="android:gravity">center|center_horizontal|start</item>
-        <item name="android:padding">10dp</item>
+        <item name="android:padding">18sp</item>
         <item name="android:textColor">@color/main_theme</item>
         <item name="android:textSize">14sp</item>
         <item name="android:textStyle">bold</item>
         <item name="fontFamily">@font/ubuntu_light</item>
-        <item name="android:layout_margin">14sp</item>
+        <item name="android:layout_margin">12sp</item>
         <item name="android:text">Select One</item>
     </style>
     <style name="sendButton" parent="Widget.MaterialComponents.Button">
@@ -112,4 +117,18 @@
         <item name="fontFamily">@font/ubuntu</item>
         <item name="android:drawableLeft">@drawable/ic_send</item>
     </style>
+    <style name="Head_Text" parent="Widget.AppCompat.TextView">
+        <item name="fontFamily">@font/ubuntu_light</item>
+        <item name="android:textSize">23sp</item>
+        <item name="android:padding">18sp</item>
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+    <style name="tab_send_button" parent="Widget.MaterialComponents.Button">
+        <item name="android:text">@string/send</item>
+        <item name="android:layout_width">250dp</item>
+        <item name="textAllCaps">false</item>
+        <item name="fontFamily">@font/ubuntu</item>
+        <item name="android:drawableLeft">@drawable/ic_send</item>
+    </style>
+
 </resources>

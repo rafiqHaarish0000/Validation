@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frame_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_mask_group_2">
+
+    <TextView
+        android:id="@+id/introRev"
+        style="@style/Main_Text"
+        android:layout_margin="32sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/intro_revolution"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/tutoInt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/introRev"
+        android:text="@string/tuto"
+        style="@style/Primary_Text"
+        app:layout_constraintTop_toBottomOf="@+id/introRev"/>
+    <TextView
+        android:id="@+id/mobichat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mobi_chat"
+        style="@style/Primary_Text"
+        app:layout_constraintTop_toBottomOf="@+id/introRev"
+        app:layout_constraintLeft_toRightOf="@+id/tutoInt"/>
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/Primary_Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/support"
+        app:layout_constraintLeft_toRightOf="@id/mobichat"
+        app:layout_constraintTop_toBottomOf="@id/introRev" />
+
+    <ImageView
+        android:id="@+id/mobiLogo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="18sp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginBottom="8dp"
+        android:padding="20sp"
+        android:src="@drawable/small_main_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView2"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16sp"
+        android:layout_marginStart="200dp"
+        android:layout_marginEnd="200dp"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/introRev"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="32sp">
+
+            <TextView
+                android:id="@+id/main_name"
+                style="@style/Head_Text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/business_cat"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/company"
+                style="@style/Detail_Edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_person"
+                android:drawableLeft="@drawable/ic_person"
+                android:drawablePadding="12sp"
+                android:hint="@string/company_name"
+                android:minHeight="48dp"
+                app:layout_constraintStart_toStartOf="@id/main_name"
+                app:layout_constraintTop_toBottomOf="@id/main_name"
+                tools:text="@string/company_name" />
+
+            <EditText
+                android:id="@+id/phone"
+                style="@style/Detail_Edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/mobile_icon"
+                android:drawableLeft="@drawable/mobile_icon"
+                android:drawablePadding="12sp"
+                android:hint="@string/company_name"
+                app:layout_constraintStart_toStartOf="@id/company"
+                app:layout_constraintTop_toBottomOf="@id/company"
+                tools:text="@string/phone_number" />
+
+            <ImageView
+                android:id="@+id/business_cart_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="9sp"
+                android:src="@drawable/business_cart"
+                app:layout_constraintStart_toStartOf="@id/phone"
+                app:layout_constraintTop_toBottomOf="@id/phone" />
+
+            <TextView
+                style="@style/Normal_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/business_cat"
+                app:layout_constraintLeft_toRightOf="@id/business_cart_image"
+                app:layout_constraintTop_toBottomOf="@id/phone" />
+
+            <TextView
+                android:id="@+id/spinnerLayout"
+                style="@style/Spinner_Text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/spinner_layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/business_cart_image"
+                app:layout_constraintTop_toBottomOf="@id/business_cart_image" />
+
+            <EditText
+                android:id="@+id/officeA"
+                style="@style/Detail_Edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_office_address"
+                android:drawableLeft="@drawable/ic_office_address"
+                android:drawablePadding="12sp"
+                android:hint="@string/office_add"
+                app:layout_constraintStart_toStartOf="@id/company"
+                app:layout_constraintTop_toBottomOf="@id/spinnerLayout"
+                tools:text="@string/phone_number" />
+
+            <EditText
+                android:id="@+id/officeS"
+                style="@style/Detail_Edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_office_city"
+                android:drawableLeft="@drawable/ic_office_city"
+                android:hint="@string/ofc_cty"
+                app:layout_constraintStart_toStartOf="@id/company"
+                app:layout_constraintTop_toBottomOf="@id/officeA"
+                tools:text="@string/phone_number" />
+
+            <EditText
+                android:id="@+id/officeC"
+                style="@style/Detail_Edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_office_state"
+                android:drawableLeft="@drawable/ic_office_state"
+                android:hint="@string/ofc_state"
+                app:layout_constraintStart_toStartOf="@id/company"
+                app:layout_constraintTop_toBottomOf="@id/officeS"
+                tools:text="@string/phone_number" />
+
+            <EditText
+                android:id="@+id/postalC"
+                style="@style/Detail_Edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/postal_code"
+                android:drawableLeft="@drawable/postal_code"
+                android:hint="@string/postal_code"
+                app:layout_constraintStart_toStartOf="@id/company"
+                app:layout_constraintTop_toBottomOf="@id/officeC"
+                tools:text="@string/phone_number" />
+
+            <Button
+                style="@style/sendButton"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="@string/send"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/postalC" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
