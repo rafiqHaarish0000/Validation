@@ -62,11 +62,13 @@
                         android:id="@+id/editTextEmail"
                         style="@style/Edit_style"
                         android:singleLine="true"
+                        android:hint="@string/email_address"
+                        android:drawableStart="@drawable/ic_mail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:minHeight="48dp"
                         app:layout_constraintTop_toBottomOf="@+id/intro"
-                        tools:layout_editor_absoluteX="14dp" />
+                        tools:layout_editor_absoluteX="14dp"
+                        android:drawableLeft="@drawable/ic_mail" />
 
                     <EditText
                         android:id="@+id/editTextPass"
@@ -74,7 +76,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textPassword"
-                        android:minHeight="48dp"
                         app:layout_constraintEnd_toEndOf="@+id/editTextEmail"
                         app:layout_constraintStart_toStartOf="@+id/editTextEmail"
                         app:layout_constraintTop_toBottomOf="@id/editTextEmail" />
@@ -177,11 +178,12 @@
                 app:layout_constraintTop_toBottomOf="@id/main_card" />
 
             <TextView
+                android:id="@+id/createOne"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/create"
                 style="@style/Primary_Text"
-                android:textColor="@color/main_theme"
+                android:textColor="@color/text_one"
                 app:layout_constraintLeft_toRightOf="@id/create_title"
                 app:layout_constraintTop_toBottomOf="@id/main_card"
                 android:layout_marginTop="5dp" />

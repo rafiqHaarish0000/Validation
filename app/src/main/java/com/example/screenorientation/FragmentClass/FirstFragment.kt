@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
@@ -21,11 +22,7 @@ internal val TAG = ClassFragments::class.java.canonicalName
 
 class ClassFragments : Fragment() {
     private lateinit var viewFragment: View
-    private lateinit var userName: EditText
-    private lateinit var password: EditText
-    private lateinit var login_buttonn: Button
-    private lateinit var signUpButton:Button
-
+    lateinit var createOne:TextView
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -48,10 +45,14 @@ class ClassFragments : Fragment() {
     }
 
     private fun validation() {
-
+        createOne = viewFragment.findViewById(R.id.createOne)
+        createOne.setOnClickListener(){
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView2,SecondFragment.getSecondInstance())
+                .commit()
+        }
 
     }
-
     private fun validationInfo(validation:Array<EditText>):Boolean{
         var flag = true
         for(item in validation){

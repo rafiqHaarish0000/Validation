@@ -21,7 +21,7 @@
     <string name="mobile_number">Mobile number</string>
     <string name="confirm_password">Confirm password</string>
 
-    <!-- TODO : for mobi design template-->
+    <!-- TODO : for login page-->
     <string name="hey">Hey.!</string>
     <string name="intro">You can user your fingerprint to access to the app</string>
     <string name="rememberMe">Remember me</string>
@@ -30,4 +30,15 @@
     <string name="tuto">Tutorial</string>
     <string name="mobi_chat">Mobi chat</string>
     <string name="support">Support</string>
+
+    <!-- TODO : for business details-->
+    <string name="company_name">Company Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="business_cat">Business Category</string>
+    <string name="office_add">Office Address</string>
+    <string name="ofc_cty">Office City</string>
+    <string name="ofc_state">Office State</string>
+    <string name="postal_code">Postal Code</string>
+    <string name="business_det">Business Details</string>
+    <string name="send">Send</string>
 </resources>

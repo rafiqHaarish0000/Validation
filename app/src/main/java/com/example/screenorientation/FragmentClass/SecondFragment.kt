@@ -6,11 +6,10 @@ import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
+import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
+import com.example.screenorientation.AlertBox.ClassAlertList
 import com.example.screenorientation.R
 
 class SecondFragment : Fragment() {
@@ -32,22 +31,29 @@ class SecondFragment : Fragment() {
     }
 
     private fun checkValidation() {
-        val firstName: EditText = viewFragment.findViewById(R.id.edt_fullName)
-        val lastName: EditText = viewFragment.findViewById(R.id.edt_lastName)
-        val email: EditText = viewFragment.findViewById(R.id.edt_email)
-        val mobileNumber: EditText = viewFragment.findViewById(R.id.edt_mobileNumber)
-        val password: EditText = viewFragment.findViewById(R.id.edt_password)
-        val confirmPassword: EditText = viewFragment.findViewById(R.id.edt_confirmPassword)
-
-        val signUpBtn: Button = viewFragment.findViewById(R.id.signUp_button)
-        signUpBtn.setOnClickListener {
+        val mCompanyName: EditText = viewFragment.findViewById(R.id.company_name)
+        val mPhoneNumber: EditText = viewFragment.findViewById(R.id.phone_number)
+        val mOfficeAddress: EditText = viewFragment.findViewById(R.id.officeAddress)
+        val mOfficeCity: EditText = viewFragment.findViewById(R.id.officeCity)
+        val mOfficeState: EditText = viewFragment.findViewById(R.id.officeState)
+        val mPostalCode: EditText = viewFragment.findViewById(R.id.postalCode)
+        val mBackimage:ImageButton = viewFragment.findViewById(R.id.backImage)
+        val mSendBtn: Button = viewFragment.findViewById(R.id.sendButton)
+        val mSelectText:TextView = viewFragment.findViewById(R.id.spinner_select)
+        mSendBtn.setOnClickListener {
             val validation =
-                arrayOf(lastName, firstName, mobileNumber, email, password, confirmPassword)
+                arrayOf(mCompanyName, mPhoneNumber, mOfficeAddress, mOfficeCity, mOfficeState, mPostalCode)
             if (validateInputField(validation)) {
-                Toast.makeText(requireContext(), "Success", Toast.LENGTH_SHORT).show()
-            } else {
-                requireActivity().supportFragmentManager.popBackStack()
+                toast("Success")
             }
+        }
+        mBackimage.setOnClickListener(){
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView2,ClassFragments.getInstance())
+                .commit()
+        }
+        mSelectText.setOnClickListener(){
+            ClassAlertList().show(childFragmentManager,"classAlert")
         }
 
     }
