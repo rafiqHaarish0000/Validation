@@ -20,7 +20,7 @@ class SecondFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         viewFragment = inflater.inflate(R.layout.second_fragment, container, false)
-        checkValidation()
+//        checkValidation()
         return viewFragment
     }
 
@@ -31,30 +31,30 @@ class SecondFragment : Fragment() {
     }
 
     private fun checkValidation() {
-        val mCompanyName: EditText = viewFragment.findViewById(R.id.company_name)
-        val mPhoneNumber: EditText = viewFragment.findViewById(R.id.phone_number)
-        val mOfficeAddress: EditText = viewFragment.findViewById(R.id.officeAddress)
-        val mOfficeCity: EditText = viewFragment.findViewById(R.id.officeCity)
-        val mOfficeState: EditText = viewFragment.findViewById(R.id.officeState)
-        val mPostalCode: EditText = viewFragment.findViewById(R.id.postalCode)
-        val mBackimage:ImageButton = viewFragment.findViewById(R.id.backImage)
-        val mSendBtn: Button = viewFragment.findViewById(R.id.sendButton)
-        val mSelectText:TextView = viewFragment.findViewById(R.id.spinner_select)
-        mSendBtn.setOnClickListener {
-            val validation =
-                arrayOf(mCompanyName, mPhoneNumber, mOfficeAddress, mOfficeCity, mOfficeState, mPostalCode)
-            if (validateInputField(validation)) {
-                toast("Success")
-            }
-        }
-        mBackimage.setOnClickListener(){
-            requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainerView2,ClassFragments.getInstance())
-                .commit()
-        }
-        mSelectText.setOnClickListener(){
-            ClassAlertList().show(childFragmentManager,"classAlert")
-        }
+//        val mCompanyName: EditText = viewFragment.findViewById(R.id.company_name)
+//        val mPhoneNumber: EditText = viewFragment.findViewById(R.id.phone_number)
+//        val mOfficeAddress: EditText = viewFragment.findViewById(R.id.officeAddress)
+//        val mOfficeCity: EditText = viewFragment.findViewById(R.id.officeCity)
+//        val mOfficeState: EditText = viewFragment.findViewById(R.id.officeState)
+//        val mPostalCode: EditText = viewFragment.findViewById(R.id.postalCode)
+//        val mBackimage:ImageButton = viewFragment.findViewById(R.id.backImage)
+//        val mSendBtn: Button = viewFragment.findViewById(R.id.sendButton)
+//        val mSelectText:TextView = viewFragment.findViewById(R.id.spinner_select)
+//        mSendBtn.setOnClickListener {
+//            val validation =
+//                arrayOf(mCompanyName, mPhoneNumber, mOfficeAddress, mOfficeCity, mOfficeState, mPostalCode)
+//            if (validateInputField(validation)) {
+//                toast("Success")
+//            }
+//        }
+//        mBackimage.setOnClickListener(){
+//            requireActivity().supportFragmentManager.beginTransaction()
+//                .replace(R.id.fragmentContainerView2,ClassFragments.getInstance())
+//                .commit()
+//        }
+//        mSelectText.setOnClickListener(){
+//            ClassAlertList().show(childFragmentManager,"classAlert")
+//        }
 
     }
 

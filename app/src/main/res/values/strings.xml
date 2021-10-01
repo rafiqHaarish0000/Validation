@@ -42,5 +42,20 @@
     <string name="business_det">Business Details</string>
     <string name="send">Send</string>
     <string name="intro_revolution">Revolution in \nOnline\nPayment</string>
+    <string name="ren">RM 50.00</string>
+    <string name="renText">Reference id/ Invoice id</string>
+    <string name="number1">1</string>
+    <string name="number2">2</string>
+    <string name="number3">3</string>
+    <string name="number4">4</string>
+    <string name="number5">5</string>
+    <string name="number6">6</string>
+    <string name="number7">7</string>
+    <string name="number8">8</string>
+    <string name="number9">9</string>
+    <string name="number_c">C</string>
+    <string name="number_0">0</string>
+    <string name="number_X">X</string>
+    <string name="payment_method">Payment mode</string>
     
 </resources>

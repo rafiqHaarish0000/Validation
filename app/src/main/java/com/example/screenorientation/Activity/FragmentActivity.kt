@@ -17,7 +17,7 @@ class FragmentActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_set_fragments)
-        firstLayout(ClassFragments.getInstance(), this)
+       secondLayout(SecondFragment.getSecondInstance(),this)
 
     }
     //Call toast message..

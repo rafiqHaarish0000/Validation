@@ -12,7 +12,7 @@
         android:theme="@style/Theme.ScreenOrientation">
         <activity
             android:name=".Activity.FragmentActivity"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

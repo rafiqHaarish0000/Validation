@@ -130,5 +130,66 @@
         <item name="fontFamily">@font/ubuntu</item>
         <item name="android:drawableLeft">@drawable/ic_send</item>
     </style>
+    <style name="header_layout" parent="Widget.AppCompat.TextView">
+        <item name="android:padding">20sp</item>
+        <item name="android:background">@drawable/header_layout</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="textAllCaps">false</item>
+        <item name="fontFamily">@font/ubuntu_light</item>
+        <item name="backgroundTint">@color/main_theme</item>
+    </style>
+    <style name="Total_Text" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">18sp</item>
+        <item name="fontFamily">@font/ubuntu_r</item>
+        <item name="android:textColor">@color/main_theme</item>
+        <item name="android:gravity">center|center_horizontal</item>
+    </style>
+    <style name="Round_Edit_Box" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/rounded_edit_box</item>
+        <item name="android:layout_margin">14sp</item>
+        <item name="android:padding">12sp</item>
+        <item name="android:gravity">center|center_horizontal</item>
+        <item name="hintTextAppearance">@style/TextAppearance.AppCompat.Medium</item>
+        <item name="android:textSize">18sp</item>
+        <item name="fontFamily">@font/ubuntu_r</item>
+        <item name="android:drawablePadding">18sp</item>
+        <item name="hintTextColor">@color/text_color</item>
+    </style>
+    <style name="Number_Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/number_button</item>
+        <item name="android:layout_width">12sp</item>
+        <item name="android:layout_height">23sp</item>
+        <item name="backgroundTint">@color/white</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="android:gravity">center|center_horizontal</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="Clour_number_button" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/number_button</item>
+        <item name="android:layout_width">12sp</item>
+        <item name="android:layout_height">23sp</item>
+        <item name="backgroundTint">@color/white</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:shape">rectangle</item>
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="android:gravity">center|center_horizontal</item>
+        <item name="android:textColor">@color/main_theme</item>
+    </style>
+    <style name="Custom_button" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">55dp</item>
+        <item name="backgroundTint">@color/white</item>
+        <item name="android:padding">15sp</item>
+        <item name="android:textSize">24sp</item>
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="android:gravity">center|center_horizontal</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
 
 </resources>
