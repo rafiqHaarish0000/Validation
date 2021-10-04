@@ -1,25 +1,22 @@
 package com.example.screenorientation.Activity
 
 import android.content.Context
-import android.content.res.Configuration
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.screenorientation.FragmentClass.ClassFragments
-import com.example.screenorientation.FragmentClass.SecondFragment
+import com.example.screenorientation.Fragments.ClassFragments
+import com.example.screenorientation.Fragments.SecondFragment
 import com.example.screenorientation.R
-import android.content.res.Configuration.ORIENTATION_PORTRAIT as ORIENTATION_PORTRAIT1
 
 class FragmentActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_set_fragments)
-       secondLayout(SecondFragment.getSecondInstance(),this)
-
+        firstLayout(ClassFragments.getInstance(), this)
+//            secondLayout(SecondFragment.getSecondInstance(),this)
     }
+
     //Call toast message..
     private fun toast(message: String) {
         Toast.makeText(applicationContext, message, Toast.LENGTH_SHORT).show()

@@ -1,28 +1,30 @@
-package com.example.screenorientation.FragmentClass
+package com.example.screenorientation.Fragments
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
-import android.text.TextUtils
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
-import androidx.fragment.app.FragmentManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.screenorientation.R
-import com.google.android.material.internal.NavigationMenuItemView
-import kotlin.reflect.typeOf
+import com.google.gson.Gson
 
 internal val TAG = ClassFragments::class.java.canonicalName
 
 class ClassFragments : Fragment() {
     private lateinit var viewFragment: View
-    lateinit var createOne:TextView
+    lateinit var createOne: TextView
+    lateinit var recylerView: RecyclerView
+    lateinit var customAdapter: CustomAdapter
+    lateinit var imageView: ImageView
+    lateinit var textView: TextView
+    private val data = ArrayList<ItemViewModel>()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -45,12 +47,15 @@ class ClassFragments : Fragment() {
     }
 
     private fun validation() {
-//        createOne = viewFragment.findViewById(R.id.createOne)
-//        createOne.setOnClickListener(){
-//            requireActivity().supportFragmentManager.beginTransaction()
-//                .replace(R.id.fragmentContainerView2,SecondFragment.getSecondInstance())
-//                .commit()
-//        }
+        recylerView = viewFragment.findViewById(R.id.recyclerView)
+
+        val customAdapter = CustomAdapter(data)
+        recylerView.apply {
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+            adapter = customAdapter
+        }
+        callGson()
 
     }
     private fun validationInfo(validation:Array<EditText>):Boolean{
@@ -63,5 +68,10 @@ class ClassFragments : Fragment() {
         }
         return flag
     }
+    private fun callGson(){
+        val gSon = Gson().fromJson<ItemViewModel>("",ItemViewModel::class.java)
+        
+    }
+
 
 }
