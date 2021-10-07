@@ -5,19 +5,25 @@ import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.os.Build
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.example.screenorientation.R
 import com.squareup.picasso.Picasso
+import java.io.FilterReader
 import java.util.*
+import kotlin.collections.ArrayList
 
 class CustomAdapter(private var data: ArrayList<TrendingRepo>, private val context: Context) :
-    RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
+    RecyclerView.Adapter<CustomAdapter.ViewHolder>(){
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view =
@@ -29,7 +35,7 @@ class CustomAdapter(private var data: ArrayList<TrendingRepo>, private val conte
         val item: TrendingRepo = data[position]
         val gradientDrawable: GradientDrawable = GradientDrawable()
         val randomColor: Random = Random()
-        val payLoads:List<Any>
+        val payLoads: List<Any>
         val colour: Int
 
 
@@ -57,8 +63,6 @@ class CustomAdapter(private var data: ArrayList<TrendingRepo>, private val conte
             .resize(50, 50)
             .centerCrop()
             .into(holder.avatar)
-
-
     }
 
     override fun getItemCount(): Int {
@@ -68,7 +72,7 @@ class CustomAdapter(private var data: ArrayList<TrendingRepo>, private val conte
     //set position
     fun updateDataset(it: ArrayList<TrendingRepo>) {
         val lastPosition = this.data.size
-        this.data = it
+        this.data.addAll(it)
         notifyItemChanged(lastPosition)
     }
 
@@ -82,9 +86,9 @@ class CustomAdapter(private var data: ArrayList<TrendingRepo>, private val conte
         val language_color = itemView.findViewById(R.id.language_color) as ImageView
     }
 
-    override fun onAttachedToRecyclerView(recyclerView: RecyclerView) {
-        super.onAttachedToRecyclerView(recyclerView)
-
+    fun resetview(filterData: List<TrendingRepo>) {
+        this.data = filterData as ArrayList<TrendingRepo>
+        notifyDataSetChanged()
     }
 
 }

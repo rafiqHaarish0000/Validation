@@ -2,30 +2,33 @@ package com.example.screenorientation.Fragments
 
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
+import android.text.Editable
+import android.text.TextUtils
+import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
+import android.widget.EditText
+import android.widget.ProgressBar
+import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.screenorientation.R
 import com.example.screenorientation.util.AppConstants
 import com.google.gson.Gson
-import android.graphics.drawable.GradientDrawable
+import kotlin.math.log
 
-import android.graphics.drawable.Drawable
 internal val TAG = ClassFragments::class.java.canonicalName
 
 class ClassFragments : Fragment() {
     private lateinit var viewFragment: View
-    lateinit var createOne: TextView
-    lateinit var recyclerView: RecyclerView
-    lateinit var customAdapter: CustomAdapter
-    lateinit var imageView: ImageView
-    lateinit var textView: TextView
-    lateinit var progressBar: ProgressBar
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var customAdapter: CustomAdapter
+    private lateinit var progressBar: ProgressBar
+    private lateinit var searchView: EditText
     private val data = ArrayList<TrendingRepo>()
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,13 +40,33 @@ class ClassFragments : Fragment() {
         validation()
         return viewFragment
     }
+
     companion object {
         fun getInstance(): ClassFragments {
             return ClassFragments()
         }
     }
+
     private fun validation() {
         recyclerView = viewFragment.findViewById(R.id.recyclerView)
+        searchView = viewFragment.findViewById(R.id.searchView)
+        searchView.addTextChangedListener(object:TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun afterTextChanged(searchText: Editable) {
+                if(searchText.isEmpty()){
+                    callGson()
+                }else{
+                    searchFilter(searchText.toString())
+                }
+            }
+
+        })
         customAdapter = CustomAdapter(data, requireContext())
         recyclerView.apply {
             layoutManager =
@@ -53,15 +76,15 @@ class ClassFragments : Fragment() {
         callGson()
     }
 
-    private fun validationInfo(validation: Array<EditText>): Boolean {
-        var flag = true
-        for (item in validation) {
-            if (item.text.toString().isEmpty()) {
-                item.error = "field required"
-                flag = false
-            }
+    private fun searchFilter(toString: String) {
+        val trendingRepoList: TrendingRepoModal? = Gson().fromJson(
+            AppConstants.SAMPLE_DATA,
+            TrendingRepoModal::class.java
+        )
+        val filterData = trendingRepoList!!.responseData.filter {
+            it.author.contains(toString,ignoreCase = true)
         }
-        return flag
+        customAdapter.resetview(filterData)
     }
 
     private fun callGson() {
@@ -72,23 +95,36 @@ class ClassFragments : Fragment() {
 
         Log.i(TAG, "callGson: trendingRepoList -> $trendingRepoList")
 
-        trendingRepoList.responseData.let{
-            customAdapter.updateDataset(it)
-
+        trendingRepoList.responseData.let {
+            customAdapter.resetview(it)
         }
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            Log.i(TAG, "callGson: postDelayed")
+            trendingRepoList.responseData.let {
+                customAdapter.updateDataset(it)
+            }
+        }, 5000)
+
+
     }
 
 
     override fun onStart() {
         super.onStart()
-        val progressBar = viewFragment.findViewById<ProgressBar>(R.id.progressBar)
+        progressBar = viewFragment.findViewById(R.id.progressBar)
         progressBar.visibility = View.VISIBLE
         recyclerView.visibility = View.GONE
         Handler().postDelayed(
-            Runnable { progressBar.visibility = View.GONE
-                     recyclerView.visibility = View.VISIBLE},
+            Runnable {
+                progressBar.visibility = View.GONE
+                recyclerView.visibility = View.VISIBLE
+            },
             2000
         )
+    }
+    private fun searchResult(){
+
     }
 
 
