@@ -23,7 +23,7 @@ internal val TAG = HomeFragment::class.java.canonicalName
 class HomeFragment : Fragment() {
     private lateinit var viewFragment: View
     private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: Adapter
+    private lateinit var customAdapter: Adapter
     private lateinit var progressBar: ProgressBar
     private lateinit var searchView: EditText
     private val data = ArrayList<TrendingRepo>()
@@ -47,7 +47,7 @@ class HomeFragment : Fragment() {
     private fun validation() {
         recyclerView = viewFragment.findViewById(R.id.recyclerView)
         searchView = viewFragment.findViewById(R.id.searchView)
-        searchView.addTextChangedListener(object:TextWatcher{
+        searchView.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
             }
@@ -56,19 +56,19 @@ class HomeFragment : Fragment() {
             }
 
             override fun afterTextChanged(searchText: Editable) {
-                if(searchText.isEmpty()){
+                if (searchText.isEmpty()) {
                     callGson()
-                }else{
+                } else {
                     searchFilter(searchText.toString())
                 }
             }
 
         })
-        adapter = Adapter(data, requireContext())
+        customAdapter = Adapter(data, requireContext())
         recyclerView.apply {
             layoutManager =
                 LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-            adapter = adapter
+            adapter = customAdapter
         }
         callGson()
     }
@@ -79,9 +79,9 @@ class HomeFragment : Fragment() {
             TrendingRepoModal::class.java
         )
         val filterData = trendingRepoList!!.responseData.filter {
-            it.author.contains(toString,ignoreCase = true)
+            it.author.contains(toString, ignoreCase = true)
         }
-        adapter.resetview(filterData)
+        customAdapter.resetview(filterData)
     }
 
     private fun callGson() {
@@ -93,19 +93,18 @@ class HomeFragment : Fragment() {
         Log.i(TAG, "callGson: trendingRepoList -> $trendingRepoList")
 
         trendingRepoList.responseData.let {
-            adapter.resetview(it)
+            customAdapter.resetview(it)
         }
 
         Handler(Looper.getMainLooper()).postDelayed({
             Log.i(TAG, "callGson: postDelayed")
             trendingRepoList.responseData.let {
-                adapter.updateDataset(it)
+                customAdapter.updateDataset(it)
             }
         }, 5000)
 
 
     }
-
 
     override fun onStart() {
         super.onStart()
@@ -120,9 +119,4 @@ class HomeFragment : Fragment() {
             2000
         )
     }
-    private fun searchResult(){
-
-    }
-
-
 }
