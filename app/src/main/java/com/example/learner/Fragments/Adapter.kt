@@ -1,33 +1,26 @@
-package com.example.screenorientation.Fragments
+package com.example.learner.Fragments
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
-import android.os.Build
-import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Filter
-import android.widget.Filterable
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
-import com.example.screenorientation.R
+import com.example.learner.R
 import com.squareup.picasso.Picasso
-import java.io.FilterReader
 import java.util.*
 import kotlin.collections.ArrayList
 
-class CustomAdapter(private var data: ArrayList<TrendingRepo>, private val context: Context) :
-    RecyclerView.Adapter<CustomAdapter.ViewHolder>(){
+class Adapter(private var data: ArrayList<TrendingRepo>, private val context: Context) :
+    RecyclerView.Adapter<Adapter.ViewHolder>(){
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.recycler_layout, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.recycler_handler, parent, false)
         return ViewHolder(view)
     }
 

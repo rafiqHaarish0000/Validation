@@ -1,4 +1,4 @@
-package com.example.screenorientation.util
+package com.example.learner.util
 
 object AppConstants {
 

@@ -1,4 +1,4 @@
-package com.example.screenorientation.Fragments
+package com.example.learner.Fragments
 
 
 data class TrendingRepoModal(
@@ -13,6 +13,4 @@ data class TrendingRepo(
     val stars: String,
     val language:String,
     val languageColor:String
-) {
-
-}
+)

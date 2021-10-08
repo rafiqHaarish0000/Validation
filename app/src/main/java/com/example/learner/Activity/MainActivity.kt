@@ -1,19 +1,18 @@
-package com.example.screenorientation.Activity
+package com.example.learner.Activity
 
 import android.content.Context
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.screenorientation.Fragments.ClassFragments
-import com.example.screenorientation.Fragments.SecondFragment
-import com.example.screenorientation.R
+import com.example.learner.Fragments.HomeFragment
+import com.example.learner.R
 
-class FragmentActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_set_fragments)
-        firstLayout(ClassFragments.getInstance(), this)
+        firstLayout(HomeFragment.getInstance(), this)
 //            secondLayout(SecondFragment.getSecondInstance(),this)
     }
 
@@ -22,15 +21,8 @@ class FragmentActivity : AppCompatActivity() {
         Toast.makeText(applicationContext, message, Toast.LENGTH_SHORT).show()
     }
 
-    //recreate fragment manager for second layout
-    private fun secondLayout(fragment: Fragment, context: Context) {
-        val recreateManager = supportFragmentManager
-        val fragmentTransaction = recreateManager.beginTransaction()
-        fragmentTransaction.replace(R.id.fragmentContainerView2, fragment)
-        fragmentTransaction.commit()
-    }
 
-    //recreate fragment manager for firstlayout
+    //recreate fragment manager for firstLayout
     private fun firstLayout(fragment: Fragment, context: Context) {
         val recreateFragment = supportFragmentManager
         val fragmentTransaction = recreateFragment.beginTransaction()
@@ -38,10 +30,5 @@ class FragmentActivity : AppCompatActivity() {
         fragmentTransaction.commit()
 
     }
-
-    companion object {
-        private var res: Boolean = false
-    }
-
 }
 

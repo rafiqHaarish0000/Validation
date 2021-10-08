@@ -1,10 +1,9 @@
-package com.example.screenorientation.Fragments
+package com.example.learner.Fragments
 
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.text.Editable
-import android.text.TextUtils
 import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
@@ -12,21 +11,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ProgressBar
-import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.screenorientation.R
-import com.example.screenorientation.util.AppConstants
+import com.example.learner.R
+import com.example.learner.util.AppConstants
 import com.google.gson.Gson
-import kotlin.math.log
 
-internal val TAG = ClassFragments::class.java.canonicalName
+internal val TAG = HomeFragment::class.java.canonicalName
 
-class ClassFragments : Fragment() {
+class HomeFragment : Fragment() {
     private lateinit var viewFragment: View
     private lateinit var recyclerView: RecyclerView
-    private lateinit var customAdapter: CustomAdapter
+    private lateinit var adapter: Adapter
     private lateinit var progressBar: ProgressBar
     private lateinit var searchView: EditText
     private val data = ArrayList<TrendingRepo>()
@@ -36,14 +33,14 @@ class ClassFragments : Fragment() {
         savedInstanceState: Bundle?
 
     ): View {
-        viewFragment = inflater.inflate(R.layout.first_fragment, container, false)
+        viewFragment = inflater.inflate(R.layout.home_fragment, container, false)
         validation()
         return viewFragment
     }
 
     companion object {
-        fun getInstance(): ClassFragments {
-            return ClassFragments()
+        fun getInstance(): HomeFragment {
+            return HomeFragment()
         }
     }
 
@@ -67,11 +64,11 @@ class ClassFragments : Fragment() {
             }
 
         })
-        customAdapter = CustomAdapter(data, requireContext())
+        adapter = Adapter(data, requireContext())
         recyclerView.apply {
             layoutManager =
                 LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-            adapter = customAdapter
+            adapter = adapter
         }
         callGson()
     }
@@ -84,7 +81,7 @@ class ClassFragments : Fragment() {
         val filterData = trendingRepoList!!.responseData.filter {
             it.author.contains(toString,ignoreCase = true)
         }
-        customAdapter.resetview(filterData)
+        adapter.resetview(filterData)
     }
 
     private fun callGson() {
@@ -96,13 +93,13 @@ class ClassFragments : Fragment() {
         Log.i(TAG, "callGson: trendingRepoList -> $trendingRepoList")
 
         trendingRepoList.responseData.let {
-            customAdapter.resetview(it)
+            adapter.resetview(it)
         }
 
         Handler(Looper.getMainLooper()).postDelayed({
             Log.i(TAG, "callGson: postDelayed")
             trendingRepoList.responseData.let {
-                customAdapter.updateDataset(it)
+                adapter.updateDataset(it)
             }
         }, 5000)
 

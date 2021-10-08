@@ -1,4 +1,4 @@
-package com.example.screenorientation
+package com.example.learner
 
 import org.junit.Test
 
