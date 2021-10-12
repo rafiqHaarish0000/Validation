@@ -82,4 +82,19 @@ object AppConstants {
             "    }\n" +
             "  ]\n" +
             "}"
+
+    object Preference{
+        const val PREFERENCE = "learnersharepref"
+
+        object Key{
+            const val USERNAME_KEY = "username"
+            const val PASSWORD_KEY = "password"
+            const val FIRSTNAME_KEY = "firstname"
+            const val LASTNAME_KEY = "lastname"
+            const val MOBILENUMBER_KEY = "mobilenumber"
+            const val CONFIRMPASSWORD_KEY = "confirmpassword"
+
+        }
+    }
+
 }

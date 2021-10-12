@@ -38,15 +38,10 @@ class HomeFragment : Fragment() {
         return viewFragment
     }
 
-    companion object {
-        fun getInstance(): HomeFragment {
-            return HomeFragment()
-        }
-    }
-
     private fun validation() {
         recyclerView = viewFragment.findViewById(R.id.recyclerView)
         searchView = viewFragment.findViewById(R.id.searchView)
+
         searchView.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
@@ -96,12 +91,12 @@ class HomeFragment : Fragment() {
             customAdapter.resetview(it)
         }
 
-        Handler(Looper.getMainLooper()).postDelayed({
-            Log.i(TAG, "callGson: postDelayed")
-            trendingRepoList.responseData.let {
-                customAdapter.updateDataset(it)
-            }
-        }, 5000)
+//        Handler(Looper.getMainLooper()).postDelayed({
+//            Log.i(TAG, "callGson: postDelayed")
+//            trendingRepoList.responseData.let {
+//                customAdapter.updateDataset(it)
+//            }
+//        }, 5000)
 
 
     }
@@ -118,5 +113,10 @@ class HomeFragment : Fragment() {
             },
             2000
         )
+    }
+    companion object{
+        fun getInstance():HomeFragment{
+            return HomeFragment()
+        }
     }
 }
