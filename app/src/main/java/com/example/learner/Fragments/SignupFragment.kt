@@ -57,7 +57,6 @@ class SignupFragment : Fragment() {
 
         //onClick
         signupButton.setOnClickListener {
-
             if (isDetailsEmpty(validation))
                 if (validationinfo()) {
                     putData()
@@ -76,7 +75,7 @@ class SignupFragment : Fragment() {
 
         var flag = true
         if (!isEmailMatch(email_edit.text.toString())) {
-            email_edit.error = "Invalid fields"
+            email_edit.error = "Invalid details"
             flag = false
         }
 
@@ -86,7 +85,6 @@ class SignupFragment : Fragment() {
         } else {
             checkText.visibility = View.GONE
         }
-
 
         if (!isMobileNumberMatch(mobileNumber_edt.text.toString())) {
             mobileNumber_edt.error = "Enter valid mobile number"
@@ -145,22 +143,22 @@ class SignupFragment : Fragment() {
         val mobilenumber: String = mobileNumber_edt.text.toString()
         val confirmpassword: String = confirm_password_edt.text.toString()
 
-        AppSessions.setFirstName(
+        AppSessions.setSession(
             AppConstants.Preference.Key.FIRSTNAME_KEY,
             firstname,
             requireContext()
         )
-        AppSessions.setLastName(
+        AppSessions.setSession(
             AppConstants.Preference.Key.LASTNAME_KEY,
             lastname,
             requireContext()
         )
-        AppSessions.setMobilenumber(
+        AppSessions.setSession(
             AppConstants.Preference.Key.MOBILENUMBER_KEY,
             mobilenumber,
             requireContext()
         )
-        AppSessions.setConfirmpassword(
+        AppSessions.setSession(
             AppConstants.Preference.Key.CONFIRMPASSWORD_KEY,
             confirmpassword,
             requireContext()
@@ -170,7 +168,6 @@ class SignupFragment : Fragment() {
         AppSessions.setSession(AppConstants.Preference.Key.PASSWORD_KEY, password, requireContext())
 
     }
-
 
     companion object {
         fun getInstance(): SignupFragment {

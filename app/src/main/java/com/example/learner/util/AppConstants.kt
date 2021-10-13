@@ -93,6 +93,7 @@ object AppConstants {
             const val LASTNAME_KEY = "lastname"
             const val MOBILENUMBER_KEY = "mobilenumber"
             const val CONFIRMPASSWORD_KEY = "confirmpassword"
+            const val IS_LOGGED_IN = "isLoggedIn"
 
         }
     }

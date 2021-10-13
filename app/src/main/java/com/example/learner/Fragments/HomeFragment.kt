@@ -2,13 +2,13 @@ package com.example.learner.Fragments
 
 import android.os.Bundle
 import android.os.Handler
-import android.os.Looper
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import androidx.fragment.app.Fragment
@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.learner.R
 import com.example.learner.util.AppConstants
+import com.example.learner.util.AppSessions
 import com.google.gson.Gson
 
 internal val TAG = HomeFragment::class.java.canonicalName
@@ -26,6 +27,7 @@ class HomeFragment : Fragment() {
     private lateinit var customAdapter: Adapter
     private lateinit var progressBar: ProgressBar
     private lateinit var searchView: EditText
+    private lateinit var logoutButton:Button
     private val data = ArrayList<TrendingRepo>()
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,7 +43,7 @@ class HomeFragment : Fragment() {
     private fun validation() {
         recyclerView = viewFragment.findViewById(R.id.recyclerView)
         searchView = viewFragment.findViewById(R.id.searchView)
-
+        logoutButton = viewFragment.findViewById(R.id.logoutBtn)
         searchView.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
@@ -59,6 +61,16 @@ class HomeFragment : Fragment() {
             }
 
         })
+
+        logoutButton.setOnClickListener(){
+            if (isLogout()){
+                requireActivity().supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragmentContainerView2, LoginFragment.getInstance())
+                    .commit()
+            }
+
+        }
+
         customAdapter = Adapter(data, requireContext())
         recyclerView.apply {
             layoutManager =
@@ -91,14 +103,6 @@ class HomeFragment : Fragment() {
             customAdapter.resetview(it)
         }
 
-//        Handler(Looper.getMainLooper()).postDelayed({
-//            Log.i(TAG, "callGson: postDelayed")
-//            trendingRepoList.responseData.let {
-//                customAdapter.updateDataset(it)
-//            }
-//        }, 5000)
-
-
     }
 
     override fun onStart() {
@@ -110,12 +114,20 @@ class HomeFragment : Fragment() {
             Runnable {
                 progressBar.visibility = View.GONE
                 recyclerView.visibility = View.VISIBLE
+                logoutButton.visibility = View.VISIBLE
             },
             2000
         )
     }
-    companion object{
-        fun getInstance():HomeFragment{
+
+
+    private fun isLogout():Boolean{
+        AppSessions.removeSession(requireContext())
+        return true
+    }
+
+    companion object {
+        fun getInstance(): HomeFragment {
             return HomeFragment()
         }
     }

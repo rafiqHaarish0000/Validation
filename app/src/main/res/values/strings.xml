@@ -3,6 +3,7 @@
     <string name="user_name">Enter Username</string>
     <string name="user_password">Enter Password</string>
     <string name="login">Login</string>
+    <style name="logout">Logout</style>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <!-- TODO : for login and signup page text -->
@@ -31,6 +32,7 @@
     <string name="tuto">Tutorial</string>
     <string name="mobi_chat">Mobi chat</string>
     <string name="support">Support</string>
+
 
     <!-- TODO : for business details-->
 </resources>

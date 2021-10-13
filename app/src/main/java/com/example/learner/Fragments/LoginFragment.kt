@@ -35,14 +35,13 @@ class LoginFragment : Fragment() {
         validation()
         return viewFragment
     }
-
-
     //onclick event..
     private fun validation() {
 
         mLoginButton.setOnClickListener() {
             if (validationInfo()) {
                 if (getData()) {
+                    AppSessions.setSession(AppConstants.Preference.Key.IS_LOGGED_IN,value = true,requireContext())
                     requireActivity().supportFragmentManager.beginTransaction()
                         .replace(R.id.fragmentContainerView2, HomeFragment.getInstance())
                         .commit()
@@ -52,14 +51,12 @@ class LoginFragment : Fragment() {
                     .show()
             }
         }
-
         mSignupButton.setOnClickListener() {
             requireActivity().supportFragmentManager.beginTransaction()
                 .replace(R.id.fragmentContainerView2, SignupFragment.getInstance())
                 .commit()
         }
     }
-
 
     //validation edittext
     private fun validationInfo(): Boolean {
@@ -75,12 +72,12 @@ class LoginFragment : Fragment() {
             flag = false
         }
 
-        if(!isEmailMatch(editUsername.text.toString())){
+        if (!isEmailMatch(editUsername.text.toString())) {
             editUsername.error = "Enter valid email"
             flag = false
         }
 
-        if(!isPasswordMatch(editPassword.text.toString())){
+        if (!isPasswordMatch(editPassword.text.toString())) {
             editPassword.error = "Enter valid password"
             flag = false
         }
